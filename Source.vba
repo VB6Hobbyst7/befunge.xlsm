@@ -53,9 +53,9 @@ Sub Main()
             End If
         Case "|"
             If Pop() = 0 Then
-                align = 2
-            Else
                 align = 3
+            Else
+                align = 2
             End If
         Case "?"
             align = Int(4 * Rnd)
@@ -141,14 +141,14 @@ Sub Main()
         Case "$"
             a = Pop()
         Case "g"
-            a = Pop()
-            b = Pop()
-            Push (Val(sheet.Cells(a, b)))
+            y = Pop()
+            x = Pop()
+            Push (Val(sheet.Cells(y, x)))
         Case "p"
-            a = Pop()
-            b = Pop()
-            c = Pop()
-            Sheet1.Cells(a, b) = Str(c)
+            y = Pop()
+            x = Pop()
+            v = Pop()
+            Sheet1.Cells(y, x) = Str(v)
         End Select
 Skip:
         Select Case align
